@@ -1,25 +1,17 @@
 package com.solid.example.good;
 
-import java.time.LocalDate;
-
-
-public class HandCover extends IssueBook implements ReturnBook{
+// this class follows Liskov substitution problem and open closed principle
+public class HandCover extends Book implements ReturnBook{
     @Override
-    public void issueBook(IssueBook book){
-        book.setStatus(false);
-        this.setIssueDate();
-        System.out.println("The hand cover book "+book.getBookTitle()+" is issues until "+book.getIssueDate().plusDays(30));
+    public void issueBook(Book book){
+        book.status = false;
+        System.out.println("The hand cover book "+book.bookTitle+" is issued");
     }
 
     @Override
-    public void returnBook(IssueBook book) {
-        book.setStatus(true);
-        Fine fine = new Fine();
-        if(fine.isFineApplicable(book.getIssueDate(),LocalDate.now())){
-            System.out.println("You need to pay fine for not returning on time "+fine.getFine());
-        }
-       else{
-            System.out.println("Thanks for returning book "+book.getBookTitle());
-        }
+    public void returnBook(Book book) {
+        book.status = true;
+        System.out.println("Thanks for returning book "+book.bookTitle);
+
     }
 }

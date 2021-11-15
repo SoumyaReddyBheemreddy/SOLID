@@ -1,23 +1,12 @@
 package com.solid.example.good;
 
 
-import java.time.LocalDate;
-class Book{
-    private String bookTitle;
-    private boolean status = true;
-    public void setBookTitle(String bookTitle){
-        this.bookTitle = bookTitle;
+//this class follows dependency inversion principle
+class Book extends BookInfo implements Issue{
+    @Override
+    public void issueBook(Book book){
+        book.status = false;
+        System.out.println("The E-Book "+book.bookTitle+" is issued");
     }
-    public String getBookTitle(){
-        return this.bookTitle;
-    }
-    public void setStatus(boolean status){
-        this.status = status;
-    }
-    public  boolean getStatus(){
-        return status;
-    }
-
-
 }
 

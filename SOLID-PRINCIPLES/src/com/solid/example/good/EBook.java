@@ -1,12 +1,9 @@
 package com.solid.example.good;
-
-import java.time.LocalDate;
-
-public class EBook extends IssueBook  {
+// this class follows open closed principle
+public class EBook extends Book {
     @Override
-    public void issueBook(IssueBook book){
-        book.setStatus(false);
-        this.setIssueDate();
-        System.out.println("The E-Book "+book.getBookTitle()+" is issues until "+book.getIssueDate().plusDays(28));
+    public void issueBook(Book book){
+        book.status = false;
+        System.out.println("The E-Book "+book.bookTitle+" is issued");
     }
 }
