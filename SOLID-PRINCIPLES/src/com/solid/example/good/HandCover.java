@@ -1,7 +1,7 @@
 package com.solid.example.good;
 
-// this class follows Liskov substitution problem and open closed principle
-public class HandCover extends Book implements ReturnBook{
+// this class follows Liskov substitution problem
+public class HandCover extends Book implements Returns {
     @Override
     public void issueBook(Book book){
         book.status = false;
