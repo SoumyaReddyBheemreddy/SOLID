@@ -6,7 +6,9 @@ import java.util.List;
 public class Student {
     final int MAX_BOOKS_PER_STUDENT = 5;
     List<Book> totalBooksIssued = new ArrayList<>();
-    public void requestBook(Issue book){
+    public void requestBook(Book book){
+        // Bookbook = new EBook();
+        //Book book = new HandCover();
         if(totalBooksIssued.size()>MAX_BOOKS_PER_STUDENT){
             System.out.println("Sorry you have exceeded maximum number of book allocated");
         }
@@ -18,7 +20,7 @@ public class Student {
             System.out.println("Sorry,"+ book.getBookTitle()+" is already issued to other student");
         }
     }
-    public void returnBook(Return book){
+    public void returnBook(HandCover book){
         totalBooksIssued.remove(book);
         book.returnBook();
     }

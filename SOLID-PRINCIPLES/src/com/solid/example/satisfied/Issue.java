@@ -1,5 +1,6 @@
 package com.solid.example.satisfied;
-//Interface segregation
-public interface Issue extends Book{
+//interface
+
+public interface Issue{
     public void issueBook();
 }

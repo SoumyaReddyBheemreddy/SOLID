@@ -1,24 +1,6 @@
 package com.solid.example.satisfied;
-//open close principles
-public class HandCover implements Issue,Return {
-    private String bookTitle;
-    private boolean status = true;
-    @Override
-    public void setBookTitle(String bookTitle){
-        this.bookTitle = bookTitle;
-    }
-    @Override
-    public String getBookTitle(){
-        return this.bookTitle;
-    }
-    @Override
-    public void setStatus(boolean status){
-        this.status = status;
-    }
-    @Override
-    public boolean getStatus(){
-        return status;
-    }
+//open close principles and interface
+public class HandCover extends  Book implements ReturnPolicy {
 
     @Override
     public void issueBook() {

@@ -1,5 +1,5 @@
 package com.solid.example.satisfied;
 //Interface segregation
-public interface Return extends Book{
+public interface ReturnPolicy {
     public  void returnBook();
 }
